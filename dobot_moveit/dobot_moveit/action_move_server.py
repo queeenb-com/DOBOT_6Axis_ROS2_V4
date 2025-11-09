@@ -13,6 +13,8 @@ from control_msgs.action import FollowJointTrajectory
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from dobot_msgs_v4.srv import *   # 自定义的服务接口
 import os
+import asyncio
+from rclpy.duration import Duration
 
 class FollowJointTrajectoryServer(Node):
 
@@ -53,7 +55,8 @@ class FollowJointTrajectoryServer(Node):
             )
         for ii in Positions:
             self.ServoJ_C(ii[0],ii[1],ii[2],ii[3],ii[4],ii[5])
-            time.sleep(0.18)
+            time.sleep(0.01)
+            
     def ServoJ_C(self, j1, j2, j3, j4, j5, j6):  # 运动指令
         P1 = ServoJ.Request()
         P1.a = float(j1)
