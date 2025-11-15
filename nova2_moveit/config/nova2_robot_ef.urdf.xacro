@@ -5,7 +5,7 @@
     <!-- Import nova2_robot urdf file -->
     <xacro:include filename="$(find dobot_rviz)/urdf/nova2_robot.urdf" />
 
-    <xacro:include filename="$(find dh_pgc140_urdf)/urdf/dh_pgc140_urdf.urdf.xacro" />
+    <xacro:include filename="$(find dh_pgc140_urdf)/urdf/dh_pgc140_urdf.xacro" />
 
     <!-- ロボット本体＋グリッパの統合 -->
     <xacro:dh_pgc140
